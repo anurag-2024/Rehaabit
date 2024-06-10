@@ -37,3 +37,12 @@ To use this project locally, follow these steps:
 
 4. **Access the Application**:
     - Open your web browser and navigate to `http://localhost:5173` to access the application.
+
+## Check Deployed App
+
+If you want to check the deployed application, you can use the following credentials:
+
+- **Email**: dummy@gmail.com
+- **Password**: dummy@123
+
+This will allow you to log in and explore the features of the application.
