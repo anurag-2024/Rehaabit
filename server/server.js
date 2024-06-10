@@ -5,6 +5,7 @@ import connect from "./db/connection.js";
 const app = express();
 import morgan from "morgan";
 import userRoutes from "./api/routes/userRoutes.js";
+import taskRoutes from "./api/routes/taskRoutes.js";
 import 'dotenv/config';
 
 app.use(express.json())
@@ -18,7 +19,7 @@ app.get("/",(req,res)=>{
 })
 
 app.use("/api",userRoutes);
-
+app.use("/api",taskRoutes);
 
 connect()
 .then(()=>{

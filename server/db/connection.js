@@ -1,9 +1,7 @@
 import mongoose from "mongoose";
-import {MongoMemoryServer} from "mongodb-memory-server";
 async function connect() {
-    const mongod =await MongoMemoryServer.create();
-    const getUri=mongod.getUri();
-    const db=await mongoose.connect(getUri);
+    mongoose.set('strictQuery',true);
+    const db=await mongoose.connect(process.env.DB_URI);
     console.log("Database Connected Successfully");
     return db;
 }

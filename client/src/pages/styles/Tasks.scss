@@ -1,16 +1,30 @@
+@import '../../mixins.scss';
 .tasks {
   width: 100%;
   height: 100%;
   .tasks-container {
     padding: 3rem 7rem;
     border-radius: 8px;
-
+    @include md{
+      padding: 3rem 0rem;
+    }
     .heading {
       text-align: center;
       margin-bottom: 20px;
       font-size: 3rem;
       font-weight: 650;
       margin-bottom: 6rem;
+      @include md{
+        margin-bottom: 3rem;
+        font-size: 2.5rem;
+        font-weight: 650;
+        margin-left: 5rem;
+      }
+      @include sm{
+        margin-bottom: 2rem;
+        font-size: 2.2rem;
+        font-weight: 600;
+      }
     }
 
     .tasks-middle {
@@ -28,7 +42,16 @@
         border-radius: 4px;
         cursor: pointer;
         font-size: 16px;
-
+       @include md{
+        margin: 1rem;
+        align-items: flex-start;
+        padding: 8px 16px;
+        font-size: 14px;
+       }
+        &:hover {
+          background-color: #2980b9;
+        
+       }
         &:hover {
           background-color: #2980b9;
         }
@@ -38,7 +61,10 @@
         display: flex;
         align-items: center;
         margin-right: 2rem;
-
+         @include md{
+          margin-right: -3rem;
+          justify-content: end;
+         }
         label {
           margin-right: 10px;
           font-size: 16px;
@@ -59,49 +85,59 @@
         text-align: center;
         font-size: 2.5rem;
         font-weight: 630;
+        @include md{
+          font-size: 2rem;
+          margin-left: 5rem;
+          font-weight: 600;
+        }
       }
-
-      table {
+      
+      .table{
         width: 100%;
-        border: 1px solid #ddd;
-        border-collapse: collapse;
-        background: white;
-
-        th,
-        td {
-          padding: 12px;
+        padding: 0 1rem;
+        @include md{
+         padding: 0 0.3rem;
+        }
+        table {
+          width: 100%;
           border: 1px solid #ddd;
-          text-align: left;
-        }
-
-        th {
-          background-color: #f7f7f7;
-        }
-
-        tr:nth-child(even) {
-          background-color: #f9f9f9;
-        }
-
-        button {
-          background-color: #3498db;
-          color: white;
-          padding: 5px 10px;
-          border: none;
-          border-radius: 4px;
-          cursor: pointer;
-          font-size: 14px;
-          margin-right: 5px;
-
-          &:hover {
-            background-color: #2980b9;
+          border-collapse: collapse;
+          background: white;
+          th,
+          td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
           }
-        }
-
-        button:last-child {
-          background-color: #e74c3c;
-
-          &:hover {
-            background-color: #c0392b;
+  
+          th {
+            background-color: #f7f7f7;
+          }
+  
+          tr:nth-child(even) {
+            background-color: #f9f9f9;
+          }
+  
+          button {
+            background-color: #3498db;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-right: 0.8rem;
+            &:hover {
+              background-color: #2980b9;
+            }
+          }
+  
+          button:last-child {
+            background-color: #e74c3c;
+  
+            &:hover {
+              background-color: #c0392b;
+            }
           }
         }
       }
@@ -126,6 +162,10 @@
   top: 20%;
   left: 25%;  
   border-bottom: 2px solid #ddd;
+  @include md{
+    width: 100%;
+    left: 5%;
+  }
   .cross{
     justify-content: end;
     font-size: 1.3rem;
