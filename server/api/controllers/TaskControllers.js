@@ -7,6 +7,7 @@ export const createTask = async (req, res) => {
             return res.status(400).json({ message: "All fields are required" });
         }
         const task = new Tasks({
+            id: req.user.id,
             title,
             description,
             status
@@ -21,7 +22,7 @@ export const createTask = async (req, res) => {
 
 export const getTasks = async (req, res) => {
     try {
-        const tasks = await Tasks.find();
+        const tasks = await Tasks.find({ id: req.user.id });
         return res.status(200).json(tasks);
     }
     catch (err) {

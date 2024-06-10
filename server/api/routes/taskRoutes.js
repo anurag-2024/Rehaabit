@@ -7,8 +7,8 @@ const router = Router();
 router.post('/task',verifyToken, createTask);
 
 /** get Routes */
-router.get('/tasks', getTasks);
-router.get('/task/:id', getTask);
+router.get('/tasks',verifyToken, getTasks);
+router.get('/task/:id',verifyToken, getTask);
 
 /** patch Routes */
 router.patch('/task/:id', verifyToken, updateTask);

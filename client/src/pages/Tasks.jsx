@@ -60,7 +60,11 @@ const Tasks = () => {
     useEffect(() => {
         const fetchTasks = async () => {
             try {
-                const response = await axios.get(`${API_URL}/tasks`);
+                const response = await axios.get(`${API_URL}/tasks`, {
+                    headers: {
+                        Authorization: `Bearer ${getToken()}`
+                    }
+                });
                 setAllTasks(response.data);
                 setFilteredTasks(response.data); 
             } catch (err) {

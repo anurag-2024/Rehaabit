@@ -1,6 +1,10 @@
 import mongoose from "mongoose";
 
 const TaskSchema = new mongoose.Schema({
+    id:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"User",
+    },
     title:{
         type:String,
         required:[true,"Title is required"],
